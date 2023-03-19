@@ -1,5 +1,6 @@
 import { Component } from 'react';
-import css from './Feedback.module.css';
+import css from './Notification.module.css';
+import PropTypes from 'prop-types';
 
 export class Notification extends Component {
   render() {
@@ -11,3 +12,7 @@ export class Notification extends Component {
     );
   }
 }
+
+Notification.propTypes = {
+  message: PropTypes.string.isRequired,
+};

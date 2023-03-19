@@ -1,5 +1,6 @@
 import { Component } from 'react';
-import css from './Feedback.module.css';
+import css from './FeedbackOptions.module.css';
+import PropTypes from 'prop-types';
 
 export class FeedbackOptions extends Component {
   handleFeedbackOption = evt => {
@@ -29,3 +30,8 @@ export class FeedbackOptions extends Component {
     );
   }
 }
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+};

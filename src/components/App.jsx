@@ -30,20 +30,24 @@ export class App extends Component {
     }));
   };
 
-  handleFeedback = name => {
-    switch (name) {
-      case 'good':
-        this.handleGoodFeedback();
-        break;
+  // handleFeedback = name => {
+  //   switch (name) {
+  //     case 'good':
+  //       this.handleGoodFeedback();
+  //       break;
 
-      case 'neutral':
-        this.handleNeutralFeedback();
-        break;
+  //     case 'neutral':
+  //       this.handleNeutralFeedback();
+  //       break;
 
-      default:
-        this.handleBadFeedback();
-    }
-  };
+  //     default:
+  //       this.handleBadFeedback();
+  //   }
+  // };
+
+  handleFeedback = name => { 
+  this.setState(state => ({...state, [name] : state[name] + 1}))
+ }; 
 
   render() {
     const { good, neutral, bad } = this.state;
